@@ -12,7 +12,6 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    objectFit: "cover",
     transform: "translate(-50%, -50%)",
     backgroundColor: "rgb(233, 233, 244)",
   },
