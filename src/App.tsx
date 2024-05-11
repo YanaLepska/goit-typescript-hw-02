@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import { Image } from "./types";
 import ImageModal from "./components/ImageModal/ImageModal";
 
+
 const App = () => {
   const [images, setImages] = useState<Image[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -93,7 +94,8 @@ const App = () => {
       {isError && <ErrorMessage />}
       {dataFetched && <LoadMoreBtn handleMoreImage={handleMoreImage} />}
       {chooseImage && (
-        <ImageModal         image={chooseImage}
+        <ImageModal
+          image={chooseImage}
           modalIsOpen={modalIsOpen}
           closeModal={closeModal}
         />

@@ -1,17 +1,18 @@
 import { Image } from "../../types";
-import Modal from 'react-modal';
+import ReactModal from 'react-modal'
 const customStyles = {
   overlay: {
     backgroundColor: "rgba(15, 12, 12, 0.9)",
   },
 
   content: {
-    height: "100%",
+    height: "80%",
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
+    objectFit: "cover",
     transform: "translate(-50%, -50%)",
     backgroundColor: "rgb(233, 233, 244)",
   },
@@ -23,12 +24,12 @@ interface ImageModalProps {
   closeModal: () => void;
 }
 
-Modal.setAppElement("#root");
+ReactModal.setAppElement("#root");
 
 const ImageModal: React.FC<ImageModalProps> = ({ image, modalIsOpen, closeModal }) => {
   return (
     <div>
-      <Modal
+      <ReactModal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         shouldCloseOnEsc={true}
@@ -41,7 +42,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ image, modalIsOpen, closeModal 
           <p>Autor: {image.user.name}</p>
           <p>Likes: {image.likes}</p>
         </div>
-      </Modal>
+      </ReactModal>
     </div>
   );
 };
